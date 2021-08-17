@@ -1,0 +1,123 @@
+﻿@model WebApplication3.Models.EmployeeAddEditViewModel
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<h2>Ashil</h2>
+
+@using (Html.BeginForm())
+
+{
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Employee.Name)
+        @Html.TextBoxFor(m => m.Employee.Name)
+        @Html.TextBoxFor(m => m.Employee.Name)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Employee.WorkingCompany)
+        @Html.DropDownListFor(m => m.Employee.WorkingCompany, new SelectList(Model.WorkingCompanies, "Id", "Name"), new { @class = "form-group" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Employee.PayRollCompany)
+        @Html.DropDownListFor(m => m.Employee.PayRollCompany, new SelectList(Model.WorkingCompanies, "Id", "Name"), new { @class = "form-group" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Employee.EmployeeStatus)
+        @Html.DropDownListFor(m => m.Employee.EmployeeStatus, new SelectList(Model.StatusList, "KeyId", "KeyName"), new { @class = "form-group" })
+
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Employee.EmployeeType)
+        @Html.DropDownListFor(m => m.Employee.EmployeeType, new SelectList(Model.EmployeeType, "KeyId", "KeyName"), new { @class = "form-group" })
+
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Employee.SSN)
+        @Html.TextBoxFor(m => m.Employee.SSN)
+
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Employee.Date_Of_Birth)
+        @Html.EditorFor(m => m.Employee.Date_Of_Birth, "{DD/MM/YYYY}")
+
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Employee.BatchId)
+        @Html.DropDownListFor(m => m.Employee.BatchId, new SelectList(Model.BatchId, "Id", "Name"), new { @class = "form-group" })
+
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Employee.Department)
+        @foreach (var item in Model.Departments)
+        {
+
+            <div>
+                <input Id="chk@(item.Id)"
+                       value="@item.Id"
+                       type="checkbox" />
+                @item.Name <br />
+            </div>}
+    </div>
+
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Employee.PersonalEmailId)
+        @Html.TextBoxFor(m => m.Employee.PersonalEmailId)
+
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Employee.OfficialEmailId)
+        @Html.TextBoxFor(m => m.Employee.OfficialEmailId)
+
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Employee.Date_Of_Hire)
+        @Html.EditorFor(m => m.Employee.Date_Of_Hire, "{DD/MM/YYYY}")
+
+    </div>
+
+
+
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Employee.HrRepresentative)
+        @Html.DropDownListFor(m => m.Employee.HrRepresentative, new SelectList(Model.HrRepo, "Id", "Name"), new { @class = "form-group" })
+
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Employee.Recruter)
+        @Html.DropDownListFor(m => m.Employee.Recruter, new SelectList(Model.Recruters, "Id", "Name"), new { @class = "form-group" })
+       
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Employee.WorkingLocation)
+        @Html.DropDownListFor(m => m.Employee.WorkingLocation, new SelectList(Model.WorkingLocations, "Id", "Name"), new { @class = "form-group" })
+
+    </div>
+
+
+
+
+    <input type="submit" value="Submit" />
+}
+
+
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+

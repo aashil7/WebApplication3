@@ -1,0 +1,138 @@
+﻿@model WebApplication3.Models.EmployeeAddEditViewModel
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<h2>Ashil</h2>
+
+@using (Html.BeginForm())
+
+{
+
+   
+
+<div class="form-group">
+    @Html.LabelFor(m => m.Employee.Status)
+    @Html.DropDownListFor(m => m.Employee.Status, new SelectList(Model.StatusList, "KeyId", "KeyName"), "Select a Type", new { @class = "form-group" })
+
+</div>
+
+
+
+
+
+
+
+
+
+        @*@<div class="form-group">
+                @Html.LabelFor(m => m.ProjectName)
+
+                @Html.ValidationMessageFor(m => m.ProjectName)
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.PayRollCompany)
+                @Html.DropDownListFor(m => m.PayRollCompany)
+                @Html.ValidationMessageFor(m => m.PayRollCompany)
+            </div>
+
+            <div class="form-control-static">
+                @Html.LabelFor(m => m.EmployeeStatus)
+                @Html.DropDownListFor(m => m.EmployeeStatus)
+                @Html.ValidationMessageFor(m => m.EmployeeStatus)
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.Gender)
+                @Html.RadioButtonFor(m => m.Gender, "Male") Male
+                @Html.RadioButtonFor(m => m.Gender, "Female") Female
+                @Html.ValidationMessageFor(m => m.Gender)
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.EmployeeType)
+                @Html.DropDownListFor(m => m.EmployeeType, new SelectList(Model.Employeetype, "Id", "Name"), "Select a Type", new { @class = "form-group" })
+                @Html.ValidationMessageFor(m => m.EmployeeType)
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.SSN)
+                @Html.TextBoxFor(m => m.SSN)
+                @Html.ValidationMessageFor(m => m.SSN)
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.Date_Of_Birth)
+                @Html.EditorFor(m => m.Date_Of_Birth, "{DD/MM/YYYY}")
+                @Html.ValidationMessageFor(m => m.Date_Of_Birth)
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.BatchId)
+                @Html.DropDownListFor(m => m.BatchId, new SelectList(Model.batchids, "Id", "Name"), "Select a Type", new { @class = "form-group" })
+                @Html.ValidationMessageFor(m => m.BatchId)
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.Department)
+                @foreach (var item in Model.Departments)
+                {
+
+                    <div>
+                        <input Id="chk@(item.DepartmentsId)"
+                               data-val-required="The isActive field is required."
+                               value="@item.DepartmentsId"
+                               name="isActive"
+                               type="checkbox" />
+                        @item.Name <br />
+                    </div>}
+            </div>
+
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.PersonalEmailId)
+                @Html.TextBoxFor(m => m.PersonalEmailId)
+                @Html.ValidationMessageFor(m => m.PersonalEmailId)
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.OfficialEmailId)
+                @Html.TextBoxFor(m => m.OfficialEmailId)
+                @Html.ValidationMessageFor(m => m.OfficialEmailId)
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.Date_Of_Hire)
+                @Html.EditorFor(m => m.Date_Of_Hire, "{DD/MM/YYYY}")
+                @Html.ValidationMessageFor(m => m.Date_Of_Hire)
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.HrRepresentative)
+                @Html.DropDownListFor(m => m.HrRepresentative, new SelectList(Model.representatives, "Id", "Name"), "Select a Type", new { @class = "form-group" })
+                @Html.ValidationMessageFor(m => m.HrRepresentative)
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.ActualRecruitment)
+                @Html.DropDownListFor(m => m.ActualRecruitment, new SelectList(Model.recruitments, "Id", "Name"), "Select a Type", new { @class = "form-group" })
+                @Html.ValidationMessageFor(m => m.ActualRecruitment)
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.WorkingLocation)
+                @Html.DropDownListFor(m => m.WorkingLocation, new SelectList(Model.Location, "Id", "Name"), "Select a Type", new { @class = "form-group" })
+                @Html.ValidationMessageFor(m => m.WorkingLocation)
+            </div>*@
+
+        <input type="submit" value="Submit" />
+        }
+
+
+
+        <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+        <script src="~/Scripts/jquery.validate.min.js"></script>
+        <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
